@@ -1,0 +1,29 @@
+299  docker volume ls
+  300  docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql-db:/var/lib/mysql mysql:8.0.25
+  301  docker ps
+  302  docker container inspect c62d52ae092b
+  303  cd /var/lib/docker/volumes/mysql-db/_data
+  304  ls
+  305  docker volume ls
+  306  docker volume inspect mysql-db
+How to delete a container and reattach a storage
+324  docker rm mysql --force
+  325  docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql-db:/var/lib/mysql mysql:8
+  326  docker ps
+  327  docker container inspect mysql
+  
+  docker import and export a cotnainer
+  334  docker export 2723242bbdfb > red_panda.tar
+  335  ls
+  336  history
+  337  docker import
+  338  docker import red_panda.tar
+  339  docker ps
+  
+  How to save and reload an image
+  344  docker images
+  345  docker save 0a14c7265e23 > whitepandaimage.tar
+  346  ls
+
+  349  docker load < whitepandaimage.tar
+  350  docker images

@@ -1,0 +1,57 @@
+10  docker --version
+   11  clear
+   12  docker info
+   13  docker
+   14  history
+   
+   
+ how to launch your first container
+ 16  docker container run --publish 80:80 --detach nginx
+
+   18  docker container run --publish 81:80 --detach httpd
+   19  docker ps
+   
+   
+   docker as process
+   32  docker run -p 83:80 -d --name webhost nginx
+   33  docker images
+   34  docker ps
+   35  docker top webhost
+   36  ps aux
+
+How to check the docker logs
+2  docker container --help
+   43  docker ps
+   44  docker images
+   45  docker top webhost
+   46  docker logs webhost
+   
+   How to start stop a container
+   48  docker ps
+   49  docker rm 9cbc
+   51  docker stop 9cbc
+   52  docker ps -a
+   53  docker rm 9cb
+   54  docker ps -a
+   55  docker ps
+   56  docker rm ff4b --force
+   57  history
+
+How to login inside a container
+66  docker container run -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql
+docker ps
+   71  docker logs containerid
+   72  docker ps
+   73  docker exec -it 301c /bin/bash
+
+
+docker network intercommunication
+ docker network create my_app_net
+  115  docker network ls
+  116  docker run -d --name my_nginx --network my_app_net nginx:alpine
+  117  docker run -d --name proxy --network my_app_net nginx:alpine
+  118  docker network ls
+  119  docker network inspect my_app_net
+  120  docker ps
+  121  docker exec -it proxy ping my_nginx
+  122  docker exec -it my_nginx ping proxy

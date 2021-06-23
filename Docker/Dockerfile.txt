@@ -1,0 +1,54 @@
+Run Java Program with Docker
+The below steps will help you to create a sample Java program. then create a Dockerfile to run a Java program under the docker container. After that build a custom docker image and run it.
+
+Create Java Program – First, create a sample Java program to run under the Docker container. Change to directory where you need to create program files, then edit file in a editor:
+cd ~/tutorial/
+nano Hello.java
+Add the following content:
+
+Java
+class Hello
+{
+    public static void main (String args[])
+    {
+        System.out.println("Welcome to Java World - Tecadmin.net");
+    }
+}
+1
+2
+3
+4
+5
+6
+7
+class Hello
+{
+    public static void main (String args[])
+    {
+        System.out.println("Welcome to Java World - Tecadmin.net");
+    }
+}
+Create Dockerfile – Next create a file named Dockerfile under the same directory of Java program file. Edit Dockerfile in your favorite text editor:
+nano Dockerfile
+Add below content:
+
+FROM openjdk:11
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+RUN javac Hello.java
+CMD ["java", "Hello"]
+Here we use OpenJDK 11 docker image to run our application. You can choose any Java version required for your application. You can search docker images for Java version on dockerhub.
+
+Build Docker Image – You have a Dockerfile and a Java program file in your current directory. Next, we need to create a docker image using these files. Execute below command to build and crate Docker image.
+docker build -t img-java-example .
+docker build java example
+
+You can see the newly created image by running docker images command.
+
+Run Container – Finally, to run your Docker container using the newly created image, type:
+docker run -it --rm img-java-example
+You will see the results like below:
+
+docker run java example
+
+The --rm option will remove container immediately after completing execution.
