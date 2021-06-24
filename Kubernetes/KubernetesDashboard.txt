@@ -1,0 +1,10 @@
+556  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+  557  kubectl get pod --all-namespaces
+  558  kubectl get svc --all-namespaces
+  559  kubectl edit svc kubernetes-dashboard --namespace=kubernetes-dashboard
+  560  kubectl get svc --all-namespaces
+  
+  authentication
+  564  git pull
+  565  kubectl apply -f dashboardauth.yml
+  566  kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"

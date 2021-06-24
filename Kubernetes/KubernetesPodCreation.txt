@@ -1,0 +1,12 @@
+421  kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0
+  422  kubectl get pod
+  423  kubectl describe pod my-first-pod
+
+
+to expose your pod outside k8s cluster
+ 433  kubectl get service
+  434  kubectl get pod
+  435  kubectl expose pod my-first-pod --type=NodePort --port=80 --name=my-first-service
+  436  kubectl get service
+  437  kubectl get pod -o wide
+  438  kubectl describe svc my-first-service
