@@ -1,0 +1,27 @@
+ 647  wget https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz
+  648  tar -zxvf helm-v3.6.1-linux-amd64.tar.gz
+  649  cd linux-amd64/
+  650  ls
+  651  mv helm /usr/bin/
+  652  cd /
+  653  helm
+  
+  root@k8smaster:/charts# cat Chart.yaml
+apiVersion: v1
+name: my-nginx
+version: 0.1.0
+appVersion: 1.0
+description: this is my first nginx chart
+
+creating our first template deployment
+below command will generate an skeleton for deployment file using kubectl
+696  kubectl create deploy my-nginx --image nginx --dry-run -o yaml > ./templates/deployment.yaml 
+  697  tree
+  698  cat templates/deployment.yaml
+
+how to install the helm chart
+ helm install my-nginx .
+ 
+ dry run on service
+ 705  kubectl expose deploy my-nginx --port 80 --dry-run -o yaml > ./templates/service.yaml
+  706  tree

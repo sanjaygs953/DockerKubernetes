@@ -1,0 +1,150 @@
+453  git clone https://github.com/gopal1409/ibmjunebatch1yaml.git
+  454  ls
+  455  cd ibmjunebatch1yaml/
+  456  ls
+  
+  458  kubectl apply -f pv.yml
+  459  kubectl get pv
+  460  kubectl describe pv
+  452  kubectl get nodes
+  453  git clone https://github.com/gopal1409/ibmjunebatch1yaml.git
+  454  ls
+  455  cd ibmjunebatch1yaml/
+  456  ls
+  457  kubectl apply-f pv.yml
+  458  kubectl apply -f pv.yml
+  459  kubectl get pv
+  460  kubectl describe pv
+  461  history
+  462  clear
+  463  kubectl get pv
+  464  kubectl edit pv task-pv-volume
+  465  kubectl get pv
+  466  git pull
+  467  ls
+  468  kubectl apply pvc.yml
+  469  kubectl apply -f pvc.yml
+  470  git pull
+  471  clear
+  472  kubectl get pv
+  473  kubectl apply -f pvc.yml
+  474  kubectl get pv
+  475  kubectl get pvc
+  476  kubectl get nodes -o wide
+  477  kubectl get pvc
+  478  kubectl get pv
+  
+  How to manage secret in kubernetes
+   493  git pull
+  494  kubectl apply -f secret.yml
+
+  496  kubectl get secret
+  497  kubectl describe secret mysql-db-password
+
+  479  kubectl edit pv task-pv-volume
+  480  kubectl get pv
+  481  kubectl get pvc
+  482  kubectl get pv
+  483  kubectl get pvc
+  484  kubectl edit pvc task-pv-claim
+  485  clear
+  486  git pull
+  487  kubectl apply -f mysqlconfig.yml
+  488  kubectl get configmap
+  489  kubectl describe configmap usermanagement-db-creation-script
+  490  history
+  491  kubectl describe configmap usermanagement-db-creation-script
+  492  history
+root@k8smaster:~/ibmjunebatch1yaml#
+
+
+autoscaling in kubernetes
+516  kubectl autoscale deployment myapp-deployment --min=5 --max=10 --cpu-percent=80
+  517  kubectl get hpa
+Describe deployment rs pod
+ 526  kubectl get deploy
+  527  kubectl describe deploy myapp-deployment
+  528  kubectl get rs
+  529  kubectl describe rs
+  530  kubectl get pod
+  531  kubectl describe pod myapp-deployment-656889595c-mfw6q
+  
+  expose the deployment
+  534  kubectl get deployment
+  535  kubectl expose deployment myapp-deployment --type=NodePort
+  536  kubectl get svc
+  537  kubectl describe svc myapp-deployment
+  538  kubectl get pod -o wide
+
+update image
+ 542  kubectl set image deployment/myapp-deployment myapp3-container=nginx:1.16.1 --record
+  543  kubectl get deploy
+  544  kubectl get rs
+  545  kubectl get pod
+   547  kubectl set image deployment/myapp-deployment myapp3-container=piuma/phpsysinfo --record
+
+ 556  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+  557  kubectl get pod --all-namespaces
+  558  kubectl get svc --all-namespaces
+  559  kubectl edit svc kubernetes-dashboard --namespace=kubernetes-dashboard
+  560  kubectl get svc --all-namespaces
+  561  history
+  562  kubectl get svc --all-namespaces
+  563  kubectl edit svc kubernetes-dashboard --namespace=kubernetes-dashboard
+  564  git pull
+  565  kubectl apply -f dashboardauth.yml
+  566  kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+  567  history
+  568  kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+  569  kubectl describe pod eyJhbGciOiJSUzI1NiIsImtpZCI6IkFBU0hjNzA4d0VpQjNpcEoxVmRObFdtVlF2OGJaZUttWjdONWZTVXRhVHcifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXNxeHd6Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI5NWQ0NGZkMC02MzFlLTQ5ZTYtYWFkMy0zODNhODkyNDRlZTAiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.wSFuYIQIHqd6NTtAKFDrEao6fODJmVLGDzkAzGi3b7ObRmKfWIHC8TrMumO1xDxb0oMzFFXVTJ5bvVOsvtq_KjVYcIJ7NzQc2bCBzKWIdg7uAoHE1TCNBHl827XvhBr3yi-e0CKC-eNP7ZZLexhxCWT7Tou50VeRAxcKMHhnZUv-zfYdC19KPyzx1EV8Cjv5137lkUmr5CtLs3w8doEK8Gzu-b9PTQktmG4YR7BkFU2PTlLwMVkiDudG9CuydHKf6J48Q85KPDrQrtLFLLD2hpJeuATDH8NsowjKeHBUggQJl5ENPNWVXCBR_774c1bw0VpKlKo_hxvGqMyS0r6Opg
+  570  clear
+  571  kubectl get pod
+  572  kubectl describe pod myapp-deployment-5bd8db8bd-j2vfs
+  573  kubectl get svc
+  574  kubectl logs
+  575  kubectl get pod
+  576  kubectl get logs myapp-deployment-5bd8db8bd-j2vfs
+  577  kubectl get log -f myapp-deployment-5bd8db8bd-j2vfs
+  578  kubectl log -f myapp-deployment-5bd8db8bd-j2vfs
+  579  kubectl logs -f myapp-deployment-5bd8db8bd-j2vfs
+  580  git pull
+  581  kubectl apply -f mysqldeploy.yml
+  582  git pull
+  583  kubectl apply -f mysqldeploy.yml
+  584  git pull
+  585  kubectl apply -f mysqldeploy.yml
+  586  git pull
+  587  kubectl apply -f mysqldeploy.yml
+  588  git pull
+  589  kubectl apply -f mysqldeploy.yml
+  590  history
+  591  kubectl get deploy
+  592  kubectl get pod
+  593  kubectl describe deploy mysql
+  594  history
+  595  kubectl get pod
+  596  kubectl describe pod mysql-64df684d6b-9k2b7
+  597  kubectl get pod
+  598  kubectl exec -it mysql-64df684d6b-9k2b7 /bin/bash
+  599  history
+  600  kubectl exec -it mysql-64df684d6b-9k2b7 /bin/bash
+  601  kubectl get svc
+  602  git pull
+  603  kubectl apply -f mysqlsvc.yml
+  604  git pull
+  605  kubectl apply -f mysqlsvc.yml
+  606  cat mysqlsvc.yml
+  607  git pull
+  608  cat mysqlsvc.yml
+  609  git pull
+  610  kubectl apply -f mysqlsvc.yml
+  611  git pull
+  612  kubectl apply -f mysqlsvc.yml
+  613  git pull
+  614  kubectl apply -f mysqlsvc.yml
+  615  kubectl get svc
+  616  kubectl describe svc mysql
+  617  kubectl get pod mysql -o wide
+  618  kubectl get pod
+  619  kubectl get pod mysql-64df684d6b-9k2b7 -o wide
+  620  history
