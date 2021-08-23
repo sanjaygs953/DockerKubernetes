@@ -1,0 +1,59 @@
+What is init container?
+
+
+What is cluster ip and nodeport?
+cluster ip - 
+
+What are the services used K8s?
+Whats are the objects used in K8s?
+How the application flow work with ingress?
+How to Running nodes in different availability zones?
+difference between stateful and deployment?
+objects? deployment , config map ,service accounts ,cluster role , role binding, network policy , ingress controller
+accessing cluster from outside ? nodeport , ingress controller
+difference between config maps and secrets
+What are static pods?
+yaml files stored in /etc/kubelet.d , controlled by kubelet and not the api server.
+
+Daemon sets required for K8s?
+1 pod for each node
+
+how to Set up high availability in K8s?
+Setting up liveness and Readiness probes
+
+Can we install app pods in master?
+applying tolerations
+
+How to create pod in particular node ?
+using node selector and node affinity
+
+How to upgrade k8s cluster?
+draining or corden node 1 and run the same pod in node 2 or node 3 upgrade node 1 and rerun the pod in node 1 
+
+how many namespaces in k8s? how to create namespace ?
+
+Networking , what is the use of flanel , calico?
+assigning ip to pods
+
+what is RBAC ?
+Role based access control
+
+Use of PV and PVC?
+
+issues in kubernetes?
+namespace issue , resource quota , special characters in config map.
+
+What is the issue when the services are not working?
+selectors and pod labels , match labels
+
+Kubernetes DNS server?
+
+how to query logs using prometheus ?
+
+
+what are Daemon sets?
+how to use ELK?
+different types to expose pods?
+
+
+
