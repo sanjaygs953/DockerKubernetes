@@ -54,6 +54,6 @@ how to query logs using prometheus ?
 what are Daemon sets?
 how to use ELK?
 different types to expose pods?
-
+types of apiversion?
 
 
