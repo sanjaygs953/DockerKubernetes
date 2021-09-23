@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-configmap
+immutable: true
+data:
+  channel.name: "designer studio"
+  channel.owner: "sanjay"

@@ -38,7 +38,7 @@ setting up clusters
 kubectl config get-contexts
 kubectl config use-contexts
 
-
+kubectl get all -o wide
 kubectl get pods
 kubectl get deployments
 kubectl get services
@@ -62,3 +62,18 @@ kubectl rollout undo depployment.v1.apps/nginx --to-revision=2
 scaling deployment
 kubectl scale deployment.v1.apps/nginx --replicas=10
 kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80
+
+persistent volumes
+1.create pv
+2.create pvc
+3.pod that uses the pvc -> pv
+
+reclaim policy
+1.Retain
+2.Recycle
+3.Delete
+
+Access Modes
+1.RWO
+2.RWM
+3.RO
