@@ -25,3 +25,18 @@ how to install the helm chart
  dry run on service
  705  kubectl expose deploy my-nginx --port 80 --dry-run -o yaml > ./templates/service.yaml
   706  tree
+
+-------------------------------
+  Helm commands
+
+helm help
+helm install (--values) (--name)
+helm fetch
+helm list
+helm status
+helm search
+helm repo update
+helm upgrade
+helm roll back
+helm delete (--purge)
+helm reset (--force) (--remove-helm-home)
